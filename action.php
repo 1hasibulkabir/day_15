@@ -20,6 +20,12 @@ if(isset($_GET['pages']))
         $blogs = $blog->getAllBlog();
         include 'pages/blog.php';
     }
+    elseif($_GET['pages'] == 'product')
+    {
+        $product = new \App\classes\Product();
+        $products = $product->getAllProduct();
+        include 'pages/product.php';
+    }
 }
 elseif (isset($_POST['btn'])){
     $passwordGenrator = new PasswordGenerator($_POST);
